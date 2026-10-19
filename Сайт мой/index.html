@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D8ank | Official Hub & Links</title>
+  
+  <!-- Шрифт для журнальной типографики -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Мягкие размытые сферы на фоне -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-middle"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <main class="page-container">
+
+    <!-- Переключатель языка EN / РУС -->
+    <div class="lang-switch-wrapper">
+      <div class="lang-switch-pill">
+        <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')">ENG</button>
+        <button type="button" class="lang-btn" id="btn-ru" onclick="setLanguage('ru')">РУС</button>
+      </div>
+    </div>
+    
+    <!-- Шапка профиля -->
+    <header class="profile-header glass-panel">
+      
+      <!-- Круглая аватарка с темной графитовой окантовкой -->
+      <div class="avatar-container">
+        <div class="avatar-ring">
+          <img 
+            src="cota" 
+            alt="Artist Avatar" 
+            class="avatar-img"
+          >
+        </div>
+      </div>
+
+
+      <!-- Никнейм с расшифровкой в скобках -->
+      <h1 class="profile-name">
+        D8ank
+        <span class="nickname-alt lang-en">(Dachniy Klubnichniy)</span>
+        <span class="nickname-alt lang-ru">(Дачный Клубничный)</span>
+      </h1>
+
+      <!-- Местоимения под ником -->
+      <div class="pronouns-box">
+        <span class="pronouns lang-en">she/her</span>
+        <span class="pronouns lang-ru">она/её</span>
+      </div>
+
+            <!-- Деятельность через точки -->
+      <p class="profile-tagline">
+        <span class="lang-en">Adopts • Commissions • Original Characters</span>
+        <span class="lang-ru">Адопты • Заказы • Личные персонажи</span>
+      </p>
+
+
+            <!-- Описание / Био в рамке -->
+      <div class="bio-glass-card">
+        <p class="bio-text">
+          <span class="lang-en">"Artist drawing in multiple cartoon styles."</span>
+          <span class="lang-ru">"Художник, рисующий в нескольких мультяшных стилях."</span>
+        </p>
+                <!-- Способы оплаты в шапке -->
+        <span class="bio-meta">
+          <span class="lang-en">Payment: PayPal (USD) • Russian cards</span>
+          <span class="lang-ru">Оплата: PayPal (USD) • Карты РФ</span>
+        </span>
+
+      </div>
+
+    </header>
+
+    <!-- Защита от скамеров / Верификация -->
+    <section class="anti-scam-glass">
+      <div class="shield-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="anti-scam-text">
+        <h3 class="lang-en">Official Accounts</h3>
+        <h3 class="lang-ru">Официальные аккаунты</h3>
+        
+        <p class="lang-en">These are my <strong>ONLY</strong> legitimate accounts. If someone messages you from an unlisted profile asking for money or offering weird deals, it is a scammer.</p>
+        <p class="lang-ru">Это мои <strong>ЕДИНСТВЕННЫЕ</strong> официальные контакты. Если вам пишут от моего имени с других страниц или предлагают сомнительные сделки — это мошенники.</p>
+      </div>
+    </section>
+
+        <!-- Ссылки -->
+    <section class="links-stack">
+
+      <!-- 1. Telegram (Главная база) -->
+      <a href="https://t.me/pikitych" target="_blank" rel="noopener noreferrer" class="link-card glass-panel">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">Telegram</span>
+          <span class="link-subtitle lang-en">Most active here</span>
+          <span class="link-subtitle lang-ru">Я чаще всего здесь</span>
+        </div>
+        <span class="link-chevron">→</span>
+      </a>
+
+      <!-- 2. Twitter / X (Активен) -->
+      <a href="https://x.com/D8ank" target="_blank" rel="noopener noreferrer" class="link-card glass-panel">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">Twitter / X</span>
+        </div>
+        <span class="link-chevron">→</span>
+      </a>
+
+      <!-- 3. DeviantArt (Активен) -->
+      <a href="https://www.deviantart.com/d8ank" target="_blank" rel="noopener noreferrer" class="link-card glass-panel">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.207 4.793L15.414 1H8v4.207l3.793 3.793H8V15h3.793L8 18.793V23h7.414l3.793-3.793V15h-3.793l3.793-3.793V4.793z"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">DeviantArt</span>
+        </div>
+        <span class="link-chevron">→</span>
+      </a>
+
+      <!-- 4. Toyhouse (Скоро) -->
+      <div class="link-card glass-panel" style="opacity: 0.65; cursor: default;">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 4.5l5 4.5v6H7v-6l5-4.5z"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">Toyhouse</span>
+          <span class="link-subtitle lang-en">Coming soon</span>
+          <span class="link-subtitle lang-ru">Скоро открытие</span>
+        </div>
+      </div>
+
+         <!-- YCH.Commishes (Прямая ссылка на твой профиль) -->
+      <a href="https://ping.commishes.com/@D8ank" target="_blank" rel="noopener noreferrer" class="link-card glass-panel">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/>
+            <path d="M15 13 9 7l4-4 6 6-4 4Z"/>
+            <path d="m18 10 2 2"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">YCH.Commishes</span>
+        </div>
+        <span class="link-chevron">→</span>
+      </a>
+
+
+
+      <!-- 6. FurAffinity (Скоро) -->
+      <div class="link-card glass-panel" style="opacity: 0.65; cursor: default;">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 13.5c-1.9 0-3.5 1.3-3.5 3 0 1.9 1.6 3.5 3.5 3.5s3.5-1.6 3.5-3.5c0-1.7-1.6-3-3.5-3zm-5.5-2c1.4 0 2.5-1.1 2.5-2.5S7.9 6.5 6.5 6.5 4 7.6 4 9s1.1 2.5 2.5 2.5zm11 0c1.4 0 2.5-1.1 2.5-2.5S18.9 6.5 17.5 6.5 15 7.6 15 9s1.1 2.5 2.5 2.5zM12 11c1.4 0 2.5-1.1 2.5-2.5S13.4 6 12 6s-2.5 1.1-2.5 2.5S10.6 11 12 11z"/>
+          </svg>
+        </div>
+        <div class="link-info">
+          <span class="link-title">FurAffinity</span>
+          <span class="link-subtitle lang-en">Coming soon</span>
+          <span class="link-subtitle lang-ru">Скоро открытие</span>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Аккордеон с правилами (TOS) -->
+    <section class="tos-accordion glass-panel">
+      <button type="button" class="tos-head-btn" onclick="toggleTOS()">
+        <span class="tos-head-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tos-icon">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <span class="lang-en">Adopt Terms of Service (TOS)</span>
+          <span class="lang-ru">Правила покупки адоптов (TOS)</span>
+        </span>
+        <span id="tos-arrow" class="tos-arrow">▼</span>
+      </button>
+
+            <div id="tos-body" class="tos-body">
+        <!-- Правила на Английском -->
+        <ul class="tos-list lang-en">
+          <li><strong>Payment & Holds:</strong> Full payment via PayPal (USD) or Russian bank cards must be sent within 24 hours after claiming or auction end. Holds are negotiable and strictly require a non-refundable 20% deposit upfront. Character files are transferred only after 100% payment.</li>
+          <li><strong>Delivery & Files:</strong> High-resolution files are delivered in JPG format by default. If you need separate transparent PNG files, please let me know and I will provide them with pleasure.</li>
+          <li><strong>Rights & Ownership:</strong> Do not claim yourself as the original designer (always credit me as the creator). Other than that, you have total creative freedom: feel free to change the design, develop lore, gift, trade, or resell without restrictions.</li>
+          <li><strong>Refunds:</strong> All payments and hold deposits are final. No refunds or chargebacks under any circumstances.</li>
+        </ul>
+
+        <!-- Правила на Русском -->
+        <ul class="tos-list lang-ru">
+          <li><strong>Оплата и бронь:</strong> Полная оплата через PayPal (USD) или Карты РФ в течение 24 часов после окончания аукциона или автобая. Бронь возможна по договоренности с обязательным невозвратным залогом 20% от суммы. Исходники отдаются строго после полной оплаты.</li>
+          <li><strong>Передача файлов:</strong> Основные файлы отправляются в формате JPG высокого разрешения. Если вам нужны отдельные прозрачные файлы PNG — просто предупредите меня, скину без проблем.</li>
+          <li><strong>Права и использование:</strong> Запрещено присваивать себе авторство оригинального дизайна (указывайте меня как автора). В остальном — полная свобода: разрешены любые изменения, развитие персонажа, дарение, обмен и свободная перепродажа без ограничений.</li>
+          <li><strong>Возврат средств:</strong> Все платежи и залоги окончательны. Возврат средств и отмена переводов (чарджбеки) не предусмотрены.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Футер страницы (по центру и аккуратный мелкий шрифт) -->
+    <footer class="profile-footer" style="text-align: center; font-size: 0.78rem; opacity: 0.6; margin-top: 24px; padding-bottom: 24px;">
+      <p class="footer-copy" style="margin: 0;">
+        <span class="lang-en">© 2026 D8ank • Original characters & adopts</span>
+        <span class="lang-ru">© 2026 D8ank • Авторские персонажи и адопты</span>
+      </p>
+    </footer>
+
+
+
+  </main>
+
+
+  <script>
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    }
+
+    function toggleTOS() {
+      const body = document.getElementById('tos-body');
+      const arrow = document.getElementById('tos-arrow');
+      body.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+
+    function copyDiscord(tag) {
+      navigator.clipboard.writeText(tag).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('visible');
+        setTimeout(() => toast.classList.remove('visible'), 2400);
+      });
+    }
+  </script>
+</body>
+</html>
+

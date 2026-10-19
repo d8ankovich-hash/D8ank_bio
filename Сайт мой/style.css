@@ -1,0 +1,537 @@
+/* =========================================================
+   ПАЛИТРА: МОЛОЧНО-КРЕМОВЫЙ МАТОВЫЙ СТИЛЬ + ГРАФИТОВЫЙ АКЦЕНТ
+   ========================================================= */
+:root {
+  --bg-cream: #FAF7F2;               /* Основной молочный фон */
+  
+  /* Эффект матового стекла */
+  --glass-bg: rgba(255, 255, 255, 0.68);
+  --glass-bg-hover: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-subtle: rgba(226, 220, 210, 0.65);
+  
+  /* Текстовые цвета */
+  --text-primary: #181716;           /* Глубокий темный графит для заголовков */
+  --text-secondary: #585550;         /* Приглушенный темный для текста */
+  --text-muted: #8E8A83;             /* Мягкий бежево-серый */
+  
+  /* Тени */
+  --glass-shadow: 0 10px 30px -4px rgba(70, 60, 45, 0.05), 0 4px 12px -2px rgba(70, 60, 45, 0.03);
+  --glass-shadow-hover: 0 14px 34px -4px rgba(50, 40, 30, 0.09), 0 6px 14px -2px rgba(50, 40, 30, 0.04);
+}
+
+/* =========================================================
+   ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА (EN / RU)
+   ========================================================= */
+[data-lang="en"] .lang-ru {
+  display: none !important;
+}
+
+[data-lang="ru"] .lang-en {
+  display: none !important;
+}
+
+/* =========================================================
+   БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  padding: 2.5rem 1.2rem;
+}
+
+/* =========================================================
+   МЯГКИЙ РАЗМЫТЫЙ ФОН (AMBIENT GLOW)
+   ========================================================= */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.glow-top {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, #ECE4D6 0%, rgba(236, 228, 214, 0) 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glow-middle {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #E4DCCF 0%, rgba(228, 220, 207, 0) 70%);
+  top: 42%;
+  right: -90px;
+}
+
+.glow-bottom {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #EFE8DC 0%, rgba(239, 232, 220, 0) 70%);
+  bottom: 60px;
+  left: -80px;
+}
+
+/* =========================================================
+   СТЕКЛЯННЫЕ ПАНЕЛИ (GLASSMORPHISM)
+   ========================================================= */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 520px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   КНОПКИ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА
+   ========================================================= */
+.lang-switch-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -0.25rem;
+}
+
+.lang-switch-pill {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  padding: 3px;
+  display: flex;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  background: #FFFFFF;
+  color: var(--text-primary);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* =========================================================
+   ШАПКА ПРОФИЛЯ И АВАТАРКА БЕЗ БЕЛЫХ ЗАЗОРОВ
+   ========================================================= */
+.profile-header {
+  padding: 2rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-container {
+  margin-bottom: 1.1rem;
+}
+
+/* Картинка сидит вплотную к темной обводке */
+.avatar-ring {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  padding: 0;              /* Убран отступ, который давал белый зазор */
+  overflow: hidden;         /* Обрезает аватарку строго по кругу */
+  background: transparent;
+  border: 2px solid var(--text-primary); /* Темная обводка под цвет текста */
+  box-shadow: 0 8px 22px -2px rgba(24, 23, 22, 0.14);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.avatar-ring:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 28px -2px rgba(24, 23, 22, 0.22);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Чип статуса лички */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--glass-border-subtle);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.status-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+}
+
+.profile-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Серый ник в скобках рядом */
+.nickname-alt {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Местоимения под ником */
+.pronouns-box {
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.pronouns {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+
+
+
+.profile-tagline {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.bio-glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--glass-border-subtle);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  max-width: 440px;
+}
+
+.bio-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.bio-meta {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   БЛОК ANTI-SCAM
+   ========================================================= */
+.anti-scam-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--text-primary);
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  box-shadow: var(--glass-shadow);
+}
+
+.shield-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.anti-scam-text h3 {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.anti-scam-text p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* =========================================================
+   СТЕКЛЯННЫЕ КНОПКИ-ССЫЛКИ
+   ========================================================= */
+.links-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 16px;
+}
+
+.link-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: #D6CEC2;
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.btn-clickable {
+  text-align: left;
+  border: 1px solid var(--glass-border);
+}
+
+.link-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.link-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.link-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.link-chevron {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.link-card:hover .link-chevron {
+  transform: translateX(4px);
+  color: var(--text-primary);
+}
+
+.copy-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(235, 230, 222, 0.7);
+  color: var(--text-primary);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   РАСКРЫВАЮЩИЕСЯ ПРАВИЛА (TOS)
+   ========================================================= */
+.tos-accordion {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.tos-head-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.3rem;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.tos-head-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.tos-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.tos-arrow {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+}
+
+.tos-arrow.open {
+  transform: rotate(180deg);
+}
+
+.tos-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.3rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid transparent;
+}
+
+.tos-body.open {
+  max-height: 480px;
+  padding: 1rem 1.3rem 1.3rem;
+  border-top-color: var(--glass-border-subtle);
+}
+
+.tos-list {
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tos-list strong {
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   ПОДВАЛ
+   ========================================================= */
+.page-footer {
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-sub {
+  font-size: 0.72rem;
+  color: #A39F97;
+  margin-top: 2px;
+}
+
+/* =========================================================
+   ВСПЛЫВАЮЩИЙ TOAST
+   ========================================================= */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(90px);
+  background: var(--text-primary);
+  color: #FFFFFF;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.toast-notification.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* =========================================================
+   АДАПТИВ ДЛЯ СМАРТФОНОВ
+   ========================================================= */
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 0.85rem;
+  }
+  
+  .avatar-ring {
+    width: 102px;
+    height: 102px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .link-card {
+    padding: 0.85rem 1rem;
+  }
+}
